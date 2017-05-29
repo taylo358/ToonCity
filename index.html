@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Toon City</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!--JQuery CDN-->
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!--Link to CSS stylesheet-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- load js file -->
+    <script src="function.js" type="text/javascript"></script> 
+
+    <!-- Load libraries (Note: IE required polyfills, in this exact order_ -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- Configure SystemJS -->
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/js/main').then(null, console.error.bind(console));
+    </script>
+
+<!--Search bar JS-->
+    <script type="text/javascript">
+        function active(){
+            var searchBar = document.getElementById('searchBar');
+
+            if(searchBar.value == 'Search...'){
+                searchBar.value = ''
+                searchBar.placeholder = 'Search...'
+            }
+        }
+        function inactive(){
+            var searchBar = document.getElementById('searchBar');
+
+            if(searchBar.value == ''){
+                searchBar.value = 'Search...'
+                searchBar.placeholder = ''
+            }
+        }
+    </script>
+</head>
+<body background="#7f8c8d">
+<a href="#" class="back-to-top">Back to top</a> 
+<p class="title1"><a href="#">Login</a> | <a href="#">Register</a></p>
+<p class="title">ToonCity</p>
+
+<div class="container-fluid">
+       
+
+</div>
+
+<!--Search Bar-->
+    <form action="search.php" method="post">
+        <input type="text" id="searchBar" placeholder="" value="Search..." maxlength="25" autocomplete="on" onmousedown="active();" onBlur="inactive();"><input type="submit" id="searchBtn" value="Go!" />
+    </form>
+
+<!--Image Slideshow-->
+        
+        <div class="container-fluid" style="max-width:800px">
+        <a href="#"><img class="mySlides" src="SJack1.jpg" style="width:100%"></a>
+        <a href="#"><img class="mySlides" src="Ftale.png" style="width:100%"></a>
+        <a href="#"><img class="mySlides" src="1punch.jpg" style="width:100%"></a>
+        <a href="#"><img class="mySlides" src="tokyog.jpg" style="width:100%"></a>
+<br>
+        </div>
+
+<!--Javascript for slideshow functionality-->
+<script>
+    
+var myIndex = 0;
+carousel();
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000); // Change image every 4 seconds
+}
+</script>      
+<!--End of image slideshow code-->
+        
+<!--Row1-->
+    <div class="container">
+        <div class="row">                             
+            <div class="col-sm-3">                 
+                <img class="img-responsive" src="AClass.png" style="width:304px;height:228px;"/>
+                <h4>Assassination Classroom</h4>
+            </div>                  
+            <div class="col-sm-3">
+                <img class="img-responsive" src="GaKill.png" style="width:304px;height:228px;"/>
+                <h4>Akame Ga Kill</h4>
+            </div>
+             <div class="col-sm-3">
+                <img class="img-responsive" src="Mob.jpg" style="width:304px;height:228px;" />
+                <h4>Mob Psycho 100</h4>
+            </div>  
+            <div class="col-sm-3">
+                <img class="img-responsive" src="Dragonball.jpg" style="width:304px;height:228px;" />
+                <h4>Dragonball Super</h4>
+            </div> 
+        </div>
+    </div>
+<br><br>
+            
+<!--Row2-->
+        <div class="container">
+        <div class="row">                             
+            <div class="col-sm-3">                 
+                <img class="img-responsive" src="Kuroko.jpg" style="width:304px;height:228px;"/>
+                <h4>Kuroko's Basketball</h4>
+            </div>                  
+            <div class="col-sm-3">
+                <img class="img-responsive" src="SJack2.jpg" style="width:304px;height:228px;"/>
+                <h4>Samurai Jack</h4>
+            </div>
+             <div class="col-sm-3">
+                <img class="img-responsive" src="AOT.jpg" style="width:304px;height:228px;" />
+                <h4>Attack On Titan</h4>
+            </div>  
+            <div class="col-sm-3">
+                <img class="img-responsive" src="1punch2.jpg" style="width:304px;height:228px;" />
+                <h4>One Punch Man</h4>
+            </div> 
+        </div>
+    </div>
+<br><br>
+
+<!--Row3-->
+        <div class="container">
+        <div class="row">                             
+            <div class="col-sm-3">                 
+                <img class="img-responsive" src="Ftail.jpg" style="width:304px;height:228px;"/>
+                <h4>Fairy Tail</h4>
+            </div>                  
+            <div class="col-sm-3">
+                <img class="img-responsive" src="dura.jpg" style="width:304px;height:228px;"/>
+                <h4>Durarara</h4>
+            </div>
+             <div class="col-sm-3">
+                <img class="img-responsive" src="parasyte.jpg" style="width:304px;height:228px;" />
+                <h4>Parasyte</h4>
+            </div>  
+            <div class="col-sm-3">
+                <img class="img-responsive" src="tokyog2.jpg" style="width:304px;height:228px;" />
+                <h4>Tokyo Ghoul</h4>
+            </div> 
+        </div>
+    </div>
+<br><br>
+
+<!--Footer-->
+    <div style="display:block;" class="footbg" >
+            <div class="container">
+                <div clas="row">
+                 <div class="col-sm-2">
+                     <h3>Products</h3>
+                     <p><a href="#">DVD's</a><br>
+                    <a href="#">Clothing</a><br>
+                    <a href="#">Accessories</a></p>
+                 </div>   
+                <div class="col-sm-2">
+                    <h3>Business</h3>
+                    <p><a href="#">Advertise With Us</a><br>
+                    <a href="#">Donate</a></p>
+                </div>
+                <div class="col-sm-2">
+                    <h3>About</h3>
+                        <p><a href="#">Company</a><br>
+                    <a href="#">Our Values</a><br>
+                    <a href="#">Contact Us</a></p>
+                </div>
+                    <div class="col-sm-6">
+                    <p class="title2">ToonCity</p>
+                    </div>
+            </div>
+        </div>
+    </div>   
+
+</body>
+</html>
